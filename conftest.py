@@ -14,6 +14,7 @@ def browser(request):
     browser_name = request.config.getoption("browser_name")
     #browser = None
     options = Options()
+    options.add_experimental_option('excludeSwitches', ['enable-logging'])
     options.add_experimental_option('prefs', {'intl.accept_languages': user_language})
     browser = webdriver.Chrome(options=options)        
     print("\nstart chrome browser for test..")
